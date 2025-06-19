@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleClick}>Click here for my card</button>
+      <button onClick={handleClick}>Click heres for my card</button>
       {showCard && <Menu />}
     </div>
   );

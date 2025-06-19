@@ -1,16 +1,21 @@
 import React from "react";
 
-function Menu({ buttons, onClick }) {
+function Menu({ operation, setOperation }) {
+  const operations = ["+", "-", "*", "/"];
+
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
-      {buttons.map((btn, index) => (
-        <button
-          key={index}
-          onClick={() => onClick(btn)}
-          style={{ padding: 20, fontSize: 18 }}
-        >
-          {btn}
-        </button>
+    <div style={{ margin: "10px 0" }}>
+      {operations.map((op) => (
+        <label key={op} style={{ marginRight: 15 }}>
+          <input
+            type="radio"
+            name="operation"
+            value={op}
+            checked={operation === op}
+            onChange={(e) => setOperation(e.target.value)}
+          />
+          {op}
+        </label>
       ))}
     </div>
   );

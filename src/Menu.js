@@ -1,44 +1,16 @@
-// Menu.js
-import React from 'react';
-import Greet from './Greet';
+import React from "react";
 
-function Menu() {
-  const users = [
-    {
-      name: 'Akshay',
-      email: 'akshayhebbar568@gmail.com',
-      phone: '9740569989',
-      skills: ['React', 'JavaScript', 'CSS'],
-      experience: '3 years'
-    },
-    {
-      name: 'KumaraHegde',
-      email: 'kummikiran@gmail.com',
-      phone: '987-654-3210',
-      skills: ['Python', 'Django', 'Kiran'],
-      experience: '69 years'
-    },
-    {
-      name: 'Nagesh',
-      email: 'shrajankumar@example.com',
-      phone: '69696969696',
-      skills: ['Java', 'Spring Boot,Shrajan'],
-      experience: '8 years'
-    }
-  ];
-
+function Menu({ buttons, onClick }) {
   return (
-    <div className="Shailu">
-      <h1>User Menu</h1>
-      {users.map((user, index) => (
-        <Greet
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
+      {buttons.map((btn, index) => (
+        <button
           key={index}
-          name={user.name}
-          email={user.email}
-          phone={user.phone}
-          skills={user.skills}
-          experience={user.experience}
-        />
+          onClick={() => onClick(btn)}
+          style={{ padding: 20, fontSize: 18 }}
+        >
+          {btn}
+        </button>
       ))}
     </div>
   );

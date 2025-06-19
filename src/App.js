@@ -12,7 +12,7 @@ const buttons = [
 function App() {
   const [input, setInput] = useState("");
 
-  // Handle button clickss
+  // Handle button clicksss
   const handleClick = (value) => {
     if (value === "=") {
       try {
